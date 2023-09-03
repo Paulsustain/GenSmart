@@ -29,8 +29,13 @@ COMPONENTS OF THE SMARTGEN SYSTEM
 2. ![s7](https://github.com/Paulsustain/GenSmart/assets/90159980/2ee821b3-db32-41f8-9994-6ed0873ec6a9)
 3. ![s8](https://github.com/Paulsustain/GenSmart/assets/90159980/82de86ee-4513-4954-83cb-ec3744dd66cd)
 
+   
    OTHER COMPONENTS
    1. USB to RS485 Converter
-      
+
+    RASPBERRY PI FIRMWARE FLOWCHART
+
+   ![s9](https://github.com/Paulsustain/GenSmart/assets/90159980/871837a2-c6fa-4cd2-a732-ea823e64fa05)
+
 
 
