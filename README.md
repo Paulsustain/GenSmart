@@ -8,5 +8,4 @@ GenSmart system is an equipment operations and maintenance monitoring solution. 
 ![s2](https://github.com/Paulsustain/GenSmart/assets/90159980/326d5285-626f-405b-9a64-54b32eb62ed8)
 
 The DFM is used to measure fuel flowing in the fuel line of equipment by generating signal equivalent to the amount of fuel passing through it. There are various types of flowmeters with different specifications and properties depending on user’s choice. Appropriate flowmeter for a specific application can be selected based on factors such as flowrate, engine type, interface type etc. 
-![image](https://github.com/Paulsustain/GenSmart/assets/90159980/20786086-33d5-4333-8abf-cffe90bfe619)
 
