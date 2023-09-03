@@ -1,4 +1,4 @@
-# GenSmart
+![image](https://github.com/Paulsustain/GenSmart/assets/90159980/e0d26685-799b-4bd2-9ca3-0bf1fbe89cfc)# GenSmart
 GenSmart system is an equipment operations and maintenance monitoring solution. The equipment  could either be a generator, boiler or vehicle engine.
 
 ![s1](https://github.com/Paulsustain/GenSmart/assets/90159980/d6cb4c23-a4a4-4b0b-a8d2-51d43a20be36)
@@ -19,3 +19,18 @@ Digital output interfaces of DFM A232/C232/D232 and DFM A485/C485/D485 are physi
 
 
 ![s5](https://github.com/Paulsustain/GenSmart/assets/90159980/46b573fc-a8f5-4598-bf5a-de06392e6e93)
+
+COMPONENTS OF THE SMARTGEN SYSTEM
+
+
+
+1. ![s6](https://github.com/Paulsustain/GenSmart/assets/90159980/a6661d1a-8038-445c-8dc1-84fe072f4987)
+
+2. ![s7](https://github.com/Paulsustain/GenSmart/assets/90159980/2ee821b3-db32-41f8-9994-6ed0873ec6a9)
+3. ![s8](https://github.com/Paulsustain/GenSmart/assets/90159980/82de86ee-4513-4954-83cb-ec3744dd66cd)
+
+   OTHER COMPONENTS
+   1. USB to RS485 Converter
+      
+
+
