@@ -1,0 +1,12 @@
+[Unit]
+Description=LCD Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 lcd_write_handler.py
+WorkingDirectory=/home/pi/smarteye/handlers/
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

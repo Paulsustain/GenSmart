@@ -1,0 +1,54 @@
+from crontab import CronTab
+import sys
+sys.path.append('/home/pi/smarteye/services')
+import sqlite_service
+
+
+def install_new_jobs():
+    my_cron = CronTab(user='pi')
+
+    my_cron.remove_all()
+    my_cron.write()
+
+    #rewrite static jobs
+    job = my_cron.new(command='sh /home/pi/smarteye/gprs_restart.sh > /home/pi/smarteye/cron_output.log  2>&1', comment = 'gprs_start')
+    job.every_reboot()
+
+
+    job = my_cron.new(command='python3 /home/pi/firmware_download_manager.py > /home/pi/firmware_download_manager_log.txt', comment = 'download_manager')
+    job.every_reboot()
+
+    #job = my_cron.new(command='python3 /home/pi/firmware_download_manager.py > /home/pi/firmware_download_manager_log.txt', comment = 'download_manager')
+    #job.minute.every(30)
+
+    job = my_cron.new(command='sh /home/pi/smarteye/gprs_restart.sh  > /home/pi/smarteye/cron_output.log  2>&1', comment = 'gprs_start')
+    job.minute.every(15)
+
+    #job = my_cron.new(command='python3  /home/pi/smarteye/handlers/heartbeat_handler.py > /home/pi/smarteye/cron_output.log ', comment = 'heartbeat_handler')
+    #job.minute.every(1)
+
+    job = my_cron.new(command='python3  /home/pi/smarteye/rabbits/emit_heartbeat.py > /home/pi/smarteye/cron_output.log ', comment = 'heartbeat_handler')
+    job.minute.every(1)
+
+    job = my_cron.new(command='python3  /home/pi/smarteye/handlers/remote_config_updater_handler.py > /home/pi/smarteye/cron_output.log ', comment = 'remote_config_updater_handler')
+    job.minute.every(1)
+
+    #get new transmit interval and reset jobs
+    interval= sqlite_service.get_device_config_by_slug('TRANSMIT_INTERVAL')
+    local_transmit_interval = 3 #default is 3 minutes
+    for (value) in interval: 
+        local_transmit_interval = int(int(value[0])/60)
+
+    job = my_cron.new(command='python3  /home/pi/smarteye/handlers/data_logger_handler.py > /home/pi/smarteye/cron_output.log ', comment = 'data_logger_handler')
+    job.minute.every(local_transmit_interval)
+
+    my_cron.write()
+
+    for job in my_cron:
+        print(job)
+
+def main():
+    install_new_jobs()
+
+if __name__ == '__main__':
+    main()

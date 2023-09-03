@@ -1,0 +1,12 @@
+[Unit]
+Description=RTC Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 rtc_setter.py
+WorkingDirectory=/home/pi/smarteye/data
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
